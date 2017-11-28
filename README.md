@@ -1,0 +1,2 @@
+# CooperationByDynamoDB
+DynamoDBを使用したiOSとSkillの連携
