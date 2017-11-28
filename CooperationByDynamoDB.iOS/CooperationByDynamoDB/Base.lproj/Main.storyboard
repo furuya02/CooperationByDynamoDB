@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="HiraginoMaruGothProN.ttc">
+            <string>HiraMaruProN-W4</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CooperationByDynamoDB" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="xxxxxxxx" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4ll-QC-dYI">
+                                <rect key="frame" x="10" y="146" width="300" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="gWf-UC-QbT"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="alphabet"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="シークレット・キーを入力して下さい" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BrU-IU-0FY">
+                                <rect key="frame" x="24.5" y="100" width="271" height="16"/>
+                                <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="udB-Jz-bdW" customClass="RoundedButton" customModule="CooperationByDynamoDB" customModuleProvider="target">
+                                <rect key="frame" x="60" y="259" width="200" height="50"/>
+                                <color key="backgroundColor" red="0.32175391720000002" green="0.79563398210000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="AwD-NX-MyS"/>
+                                    <constraint firstAttribute="width" constant="200" id="Ryz-PK-wcU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <state key="normal" title="OK">
+                                    <color key="titleColor" red="0.033498677710000001" green="0.31236119919999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="tapOkButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xk2-fP-Oa8"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="BrU-IU-0FY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="80" id="E8O-gg-3QX"/>
+                            <constraint firstItem="4ll-QC-dYI" firstAttribute="top" secondItem="BrU-IU-0FY" secondAttribute="bottom" constant="30" id="IQc-uW-9fv"/>
+                            <constraint firstItem="udB-Jz-bdW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Khg-TA-IcP"/>
+                            <constraint firstItem="4ll-QC-dYI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="i2v-Iv-O2t"/>
+                            <constraint firstItem="BrU-IU-0FY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uPi-Lm-mZv"/>
+                            <constraint firstItem="udB-Jz-bdW" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="zOn-Rf-3ni"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="secretKeyTextField" destination="4ll-QC-dYI" id="Tt4-1G-c7w"/>
+                        <segue destination="Isi-PM-YmX" kind="showDetail" identifier="gotoSecretViewController" id="Z1V-km-jZH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-294" y="-133"/>
+        </scene>
+        <!--Secret View Controller-->
+        <scene sceneID="tAm-n5-yBL">
+            <objects>
+                <viewController id="Isi-PM-YmX" customClass="SecretViewController" customModule="CooperationByDynamoDB" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="r9o-te-nvg">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ユーザ名と暗証番号を入力して下さい" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LHb-ZI-Jnv">
+                                <rect key="frame" x="24.5" y="100" width="270.5" height="16"/>
+                                <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="16"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="P8V-4U-99O">
+                                <rect key="frame" x="60" y="136" width="200" height="30"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="YAMADA" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rZ5-pB-AtZ">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="HLu-BW-hwo"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="alphabet"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Hh6-p1-Fsp">
+                                <rect key="frame" x="60.5" y="186" width="200" height="30"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="8888" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pyC-g6-OHL">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="ICl-PP-2eL"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bBf-bp-jld" customClass="RoundedButton" customModule="CooperationByDynamoDB" customModuleProvider="target">
+                                <rect key="frame" x="60" y="259" width="200" height="50"/>
+                                <color key="backgroundColor" red="0.033498677708175398" green="0.31236119923857864" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="7q8-xz-z4M"/>
+                                    <constraint firstAttribute="width" constant="200" id="mk1-fU-K1Y"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <state key="normal" title="OK">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="tapOkButton:" destination="Isi-PM-YmX" eventType="touchUpInside" id="h3V-Am-efT"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="入力情報は、OKボタンを押してから30秒間有効です。" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R2E-wR-wIC">
+                                <rect key="frame" x="20" y="339" width="280" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="280" id="XAx-yQ-l6d"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="16"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.05256658094841489" green="0.55690831218274117" blue="0.065589085800596261" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="LHb-ZI-Jnv" firstAttribute="top" secondItem="Lm8-Z0-ZxY" secondAttribute="top" constant="80" id="5WB-Ci-Nu1"/>
+                            <constraint firstItem="LHb-ZI-Jnv" firstAttribute="centerX" secondItem="r9o-te-nvg" secondAttribute="centerX" id="Bqh-yj-rp4"/>
+                            <constraint firstItem="P8V-4U-99O" firstAttribute="top" secondItem="LHb-ZI-Jnv" secondAttribute="bottom" constant="20" id="Ehg-Bt-NpB"/>
+                            <constraint firstItem="P8V-4U-99O" firstAttribute="centerX" secondItem="r9o-te-nvg" secondAttribute="centerX" id="HRr-G4-qg0"/>
+                            <constraint firstItem="Hh6-p1-Fsp" firstAttribute="top" secondItem="P8V-4U-99O" secondAttribute="bottom" constant="20" id="KVa-1H-WWN"/>
+                            <constraint firstItem="bBf-bp-jld" firstAttribute="centerY" secondItem="r9o-te-nvg" secondAttribute="centerY" id="Zmd-a5-gRv"/>
+                            <constraint firstItem="Hh6-p1-Fsp" firstAttribute="centerX" secondItem="r9o-te-nvg" secondAttribute="centerX" id="bvu-S0-c9E"/>
+                            <constraint firstItem="bBf-bp-jld" firstAttribute="centerX" secondItem="r9o-te-nvg" secondAttribute="centerX" id="lm2-TX-Fcl"/>
+                            <constraint firstItem="R2E-wR-wIC" firstAttribute="centerX" secondItem="r9o-te-nvg" secondAttribute="centerX" id="smz-Qb-g7I"/>
+                            <constraint firstItem="R2E-wR-wIC" firstAttribute="top" secondItem="bBf-bp-jld" secondAttribute="bottom" constant="30" id="wHD-6I-NP5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Lm8-Z0-ZxY"/>
+                    </view>
+                    <connections>
+                        <outlet property="pinTextField" destination="pyC-g6-OHL" id="2CL-9P-dJ0"/>
+                        <outlet property="userTextField" destination="rZ5-pB-AtZ" id="ubf-b5-5Zn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oo4-CN-U7M" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="495" y="-133"/>
+        </scene>
+    </scenes>
+</document>
