@@ -24,6 +24,7 @@ class ViewController: UIViewController {
         }
         performSegue(withIdentifier: "gotoSecretViewController", sender: nil)
     }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let cv = segue.destination as? SecretViewController {
             cv.secretKey = secretKeyTextField.text!
