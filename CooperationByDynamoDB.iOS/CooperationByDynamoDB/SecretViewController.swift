@@ -15,7 +15,7 @@ class SecretViewController: UIViewController {
     @IBOutlet weak var userTextField: UITextField!
     @IBOutlet weak var pinTextField: UITextField!
     
-    let expired = 5.0
+    let expired = 30.0
     var secretKey = ""
 
     override func viewDidLoad() {
@@ -34,11 +34,14 @@ class SecretViewController: UIViewController {
 
     @IBAction func tapOkButton(_ sender: Any) {
         
+        userTextField.resignFirstResponder()
+        pinTextField.resignFirstResponder()
+
         let pin = pinTextField.text!
         let name = userTextField.text!
         saveDb(name: name, pin: pin)
         
-        let alert: UIAlertController = UIAlertController(title: "送信しました", message: "暗証番号は、OKボタンを押してから\(expired)秒間有効です。", preferredStyle:  UIAlertControllerStyle.alert)
+        let alert: UIAlertController = UIAlertController(title: "送信しました", message: "\n暗証番号は、OKボタンを押してから\n\(Int(expired))秒間有効です。\n\n\(Int(expired))秒以内に、スキルを起動して下さい。", preferredStyle:  UIAlertControllerStyle.alert)
         present(alert, animated: true, completion:{
             DispatchQueue.main.asyncAfter(deadline: .now() + self.expired, execute: {
                 alert.dismiss(animated: true, completion: nil)

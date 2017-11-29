@@ -11,8 +11,16 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var secretKeyTextField: UITextField!
+
+    let userDefaults = UserDefaults.standard
+    let key = "SecretKey"
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let secretKey = userDefaults.string(forKey: key) {
+            secretKeyTextField.text = secretKey
+        }
     }
     
     @IBAction func tapOkButton(_ sender: Any) {
@@ -22,12 +30,16 @@ class ViewController: UIViewController {
             present(alert, animated: true, completion: nil)
             return
         }
+        
+        secretKeyTextField.resignFirstResponder()
         performSegue(withIdentifier: "gotoSecretViewController", sender: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let cv = segue.destination as? SecretViewController {
-            cv.secretKey = secretKeyTextField.text!
+            let secretKey = secretKeyTextField.text!
+            cv.secretKey = secretKey
+            userDefaults.set(secretKey, forKey: key)
         }
     }
 }

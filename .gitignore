@@ -68,3 +68,8 @@ fastlane/test_output
 
 SecretKey.swift
 .DS_Store
+node_modules/
+.vscode/
+project.json
+.envrc
+
